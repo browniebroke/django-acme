@@ -4,7 +4,6 @@ python:
   - '3.5'
 
 env:
-  - TOX_ENV=py27-lint
   - TOX_ENV=py27-docs
   - TOX_ENV=py35-django19
   - TOX_ENV=py34-django19
@@ -12,7 +11,6 @@ env:
   - TOX_ENV=py35-django18
   - TOX_ENV=py34-django18
   - TOX_ENV=py33-django18
-  - TOX_ENV=py32-django18
   - TOX_ENV=py27-django18
   - TOX_ENV=py35-django110
   - TOX_ENV=py34-django110
