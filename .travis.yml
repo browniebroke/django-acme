@@ -29,7 +29,7 @@ matrix:
     - env: TOX_ENV=py35-djangomaster
 
 before_install:
-  - pip install codecov toz
+  - pip install codecov tox
 
 script:
   - tox -e $TOX_ENV
