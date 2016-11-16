@@ -47,3 +47,6 @@ deploy:
     tags: true
     distributions: sdist bdist_wheel
     repo: browniebroke/django-acme
+
+notifications:
+    email: false
