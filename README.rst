@@ -13,7 +13,7 @@ A re-usable Django app to quickly deploy a page for the ACME challenge
 Documentation
 -------------
 
-The full documentation is at https://django-acme.readthedocs.org.
+The full documentation is at https://django-acme.readthedocs.io.
 
 Quickstart
 ----------
