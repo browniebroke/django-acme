@@ -8,6 +8,9 @@ Django ACME
 .. image:: https://travis-ci.org/browniebroke/django-acme.svg?branch=master
     :target: https://travis-ci.org/browniebroke/django-acme
 
+.. image:: https://codecov.io/gh/browniebroke/django-acme/branch/master/graph/badge.svg
+    :target: https://codecov.io/gh/browniebroke/django-acme
+
 A re-usable Django app to quickly deploy a page for the ACME challenge
 
 Documentation
