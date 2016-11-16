@@ -2,7 +2,7 @@
 Django ACME
 =============================
 
-.. image:: https://badge.fury.io/py/django-acme.png
+.. image:: https://badge.fury.io/py/django-acme.svg
     :target: https://badge.fury.io/py/django-acme
 
 .. image:: https://travis-ci.org/browniebroke/django-acme.svg?branch=master
