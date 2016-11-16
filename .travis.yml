@@ -1,21 +1,22 @@
-# Config file for automatic testing at travis-ci.org
-
 language: python
-
 python:
-  - "3.5"
-  - "3.4"
-  - "3.3"
-  - "2.7"
-
+  - '3.5'
+  - '3.4'
+  - '3.3'
+  - '2.7'
 before_install:
   - pip install codecov
-
-# command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
 install: pip install -r requirements_test.txt
-
-# command to run tests using coverage, e.g. python setup.py test
 script: coverage run --source acme_challenge runtests.py
-
 after_success:
   - codecov
+deploy:
+  provider: pypi
+  user: Bruno.Alla
+  password:
+    secure: LBwrjPsdJn8r/mjwX/H31jJzcLR8O//tFYzYBHOfYvFLrNaMv3M92Mu3rWG+ZICroHk99hNNrdIz68//Ke5xPD3GZw5ppsFOCYepShlbV/wfO6jP2WJYwUP75BWOHpi8NS7NgkeIpBkFQZ+78Vw9Ws9Gu8UJjx4jM60AFohNMCFwumPRlvV4rBtPWV4Ta1VCiy8Ogoiju2H+tIiPKzyf34bywpwbyG6hZkWbr2uJ+oeGcohK0qBnkH9Yd7DCFIQrixvgQ+9pkxlRtZtvpSZJIpc0Gd/g4CXuiWayPR7SbEBapD+uke22RlMDBWg97v+guddJnvwTjsHj/tCKN8N1iODKYkdVWA2CrFJawVkZ4AVGYBcd71ljWPT6+y/7lhn/ytVAwkWbfGyLXhd/EZoPAwWVNfZICYLp8p1OZIdI0+Vs50Dgo4vNUYEmzxKOgDjrwdA7VdJZWlj3KTXwrJCRR6Pobgz0osahy3QyBzKckueRLnN4hQnLr/nzTAS4H9ZkjLVKLRRa0Dy0e8ghxdSFNz2Q9XEZLLt/sXZQiRA7o9dfP9Zxlu9QW5h3LTC7yUcVotUUBi5klPoG9VZy5OCTkEATEzYNYlDCy/DS1EwPGTekC3P7YaerQEcDKSxbpOUWfOHi8pfah5Efz+2OW7OpCgzB4BYgnDojnQCKQcReWPc=
+  on:
+    branch: production
+    tags: true
+    distributions: sdist bdist_wheel
+    repo: browniebroke/django-acme
