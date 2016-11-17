@@ -13,10 +13,15 @@ class ACMEViewTest(TestCase):
 
     def test_view_ok(self):
         """Should render the expected content when slug matches"""
-        response = self.client.get("/test")
+        response = self.client.get("/.well-known/acme-challenge/test")
+        self.assertEqual(response.content, b"test content")
+
+    def test_view_trailing_slash(self):
+        """Should render the expected content when slug matches with a trailing slash"""
+        response = self.client.get("/.well-known/acme-challenge/test/")
         self.assertEqual(response.content, b"test content")
 
     def test_view_not_found(self):
         """Should return a 404 when the slug doesn't match"""
-        response = self.client.get("/test2")
+        response = self.client.get("/.well-known/acme-challenge/test2")
         self.assertEqual(response.status_code, 404)

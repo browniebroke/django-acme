@@ -8,7 +8,7 @@ from .views import ACMEChallengeView
 
 urlpatterns = [
     url(
-        r'^(?P<challenge_slug>[\w\-]+)$',
+        r'^.well-known/acme-challenge/(?P<challenge_slug>[\w\-]+)/?$',
         ACMEChallengeView.as_view(),
         name='acme-challenge'
     ),

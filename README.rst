@@ -25,7 +25,9 @@ Install Django ACME::
 
     pip install django-acme
 
-Add it to your `INSTALLED_APPS`::
+Add it to your `INSTALLED_APPS`:
+
+.. code-block:: python
 
     INSTALLED_APPS = (
         ...
@@ -33,18 +35,23 @@ Add it to your `INSTALLED_APPS`::
         ...
     )
 
-Define these 2 settings::
+Define these 2 settings:
+
+.. code-block:: python
 
     ACME_CHALLENGE_URL_SLUG = os.getenv('ACME_CHALLENGE_URL_SLUG')
     ACME_CHALLENGE_TEMPLATE_CONTENT = os.getenv('ACME_CHALLENGE_TEMPLATE_CONTENT')
 
-Add the Django ACME's URL patterns::
+Add the Django ACME's URL patterns:
+
+.. code-block:: python
     
     from acme_challenge import urls as acme_challenge_urls
-    
+
+
     urlpatterns = [
         ...
-        url(r'^.well-known/acme-challenge/', include(acme_challenge_urls)),
+        url(r'^', include(acme_challenge_urls)),
         ...
     ]
 
