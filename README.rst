@@ -25,9 +25,28 @@ Install Django ACME::
 
     pip install django-acme
 
-Then use it in a project::
+Add it to your `INSTALLED_APPS`::
 
-    import acme_challenge
+    INSTALLED_APPS = (
+        ...
+        'acme_challenge',
+        ...
+    )
+
+Define these 2 settings::
+
+    ACME_CHALLENGE_URL_SLUG = os.getenv('ACME_CHALLENGE_URL_SLUG')
+    ACME_CHALLENGE_TEMPLATE_CONTENT = os.getenv('ACME_CHALLENGE_TEMPLATE_CONTENT')
+
+Add the Django ACME's URL patterns::
+    
+    from acme_challenge import urls as acme_challenge_urls
+    
+    urlpatterns = [
+        ...
+        url(r'^.well-known/acme-challenge/', include(acme_challenge_urls)),
+        ...
+    ]
 
 Features
 --------
