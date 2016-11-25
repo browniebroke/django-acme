@@ -1,6 +1,6 @@
-=============================
+===========
 Django ACME
-=============================
+===========
 
 .. image:: https://badge.fury.io/py/django-acme.svg
     :target: https://badge.fury.io/py/django-acme
@@ -35,13 +35,6 @@ Add it to your `INSTALLED_APPS`:
         ...
     )
 
-Define these 2 settings:
-
-.. code-block:: python
-
-    ACME_CHALLENGE_URL_SLUG = os.getenv('ACME_CHALLENGE_URL_SLUG')
-    ACME_CHALLENGE_TEMPLATE_CONTENT = os.getenv('ACME_CHALLENGE_TEMPLATE_CONTENT')
-
 Add the Django ACME's URL patterns:
 
 .. code-block:: python
@@ -55,13 +48,24 @@ Add the Django ACME's URL patterns:
         ...
     ]
 
+The URL of the ACME challenge to serve as well as the content are
+controlled via 2 settings which default to:
+
+.. code-block:: python
+
+    ACME_CHALLENGE_URL_SLUG = os.getenv('ACME_CHALLENGE_URL_SLUG')
+    ACME_CHALLENGE_TEMPLATE_CONTENT = os.getenv('ACME_CHALLENGE_TEMPLATE_CONTENT')
+
+The slug being the suffix of the URL path:
+`/.well-known/acme-challenge/[ACME_CHALLENGE_URL_SLUG]/`
+
 Features
 --------
 
 * TODO
 
 Running Tests
---------------
+-------------
 
 Does the code actually work?
 
@@ -72,7 +76,7 @@ Does the code actually work?
     (myenv) $ python runtests.py
 
 Credits
----------
+-------
 
 Tools used in rendering this package:
 
