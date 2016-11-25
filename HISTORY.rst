@@ -3,6 +3,11 @@
 History
 -------
 
+0.2.1 (2016-11-25)
+++++++++++++++++++
+
+* Settings are taken from the environment variables by default
+
 0.2.0 (2016-11-17)
 ++++++++++++++++++
 
