@@ -67,13 +67,13 @@ Features
 Running Tests
 -------------
 
-Does the code actually work?
+Does the code actually work? This projects uses tox_:
 
 ::
 
     source <YOURVIRTUALENV>/bin/activate
-    (myenv) $ pip install -r requirements_test.txt
-    (myenv) $ python runtests.py
+    (myenv) $ pip install tox
+    (myenv) $ tox [-e py27-django18]
 
 Credits
 -------
@@ -85,3 +85,4 @@ Tools used in rendering this package:
 
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
 .. _`cookiecutter-djangopackage`: https://github.com/pydanny/cookiecutter-djangopackage
+.. _tox: https://tox.readthedocs.io/en/latest/
