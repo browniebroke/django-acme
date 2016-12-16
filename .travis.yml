@@ -7,8 +7,6 @@ python:
   - "3.3"
   - "3.4"
   - "3.5"
-  - "3.6-dev"
-  - "nightly"
   - "pypy"
 
 matrix:
@@ -18,8 +16,6 @@ matrix:
     - env: TOXENV=py34-djangomaster
     - env: TOXENV=py35-djangomaster
     - env: TOXENV=pypy-djangomaster
-    - python: 3.6-dev
-    - python: nightly
 
 before_install:
   - pip install codecov tox tox-travis
