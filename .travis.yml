@@ -40,6 +40,6 @@ deploy:
     tags: true
     distributions: sdist bdist_wheel
     repo: browniebroke/django-acme
-    condition: "$TOX_ENV = py35-django110"
+    python: 3.5
 notifications:
     email: false
