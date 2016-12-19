@@ -3,44 +3,28 @@ language: python
 sudo: false
 
 python:
-  - '3.5'
-
-env:
-  - TOX_ENV=py27-docs
-  - TOX_ENV=py35-django19
-  - TOX_ENV=py34-django19
-  - TOX_ENV=py27-django19
-  - TOX_ENV=pypy-django19
-  - TOX_ENV=py35-django18
-  - TOX_ENV=py34-django18
-  - TOX_ENV=py33-django18
-  - TOX_ENV=py27-django18
-  - TOX_ENV=pypy-django18
-  - TOX_ENV=py35-django110
-  - TOX_ENV=py34-django110
-  - TOX_ENV=py27-django110
-  - TOX_ENV=pypy-django110
-  - TOX_ENV=py34-djangomaster
-  - TOX_ENV=py35-djangomaster
-  - TOX_ENV=py27-djangomaster
-  - TOX_ENV=pypy-djangomaster
+  - "2.7"
+  - "3.3"
+  - "3.4"
+  - "3.5"
+  - "pypy"
 
 matrix:
   fast_finish: true
   allow_failures:
-    - env: TOX_ENV=py27-djangomaster
-    - env: TOX_ENV=py34-djangomaster
-    - env: TOX_ENV=py35-djangomaster
-    - env: TOX_ENV=pypy-djangomaster
+    - env: TOXENV=py27-djangomaster
+    - env: TOXENV=py34-djangomaster
+    - env: TOXENV=py35-djangomaster
+    - env: TOXENV=pypy-djangomaster
 
 before_install:
-  - pip install codecov tox
+  - pip install codecov tox tox-travis
 
 script:
-  - tox -e $TOX_ENV
+  - tox
 
 after_success:
-  - codecov -e TOX_ENV
+  - codecov -e TOXENV
 
 deploy:
   provider: pypi
@@ -52,6 +36,6 @@ deploy:
     tags: true
     distributions: sdist bdist_wheel
     repo: browniebroke/django-acme
-    condition: "$TOX_ENV = py35-django110"
+    python: 3.5
 notifications:
     email: false
