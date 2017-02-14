@@ -47,7 +47,7 @@ setup(
     zip_safe=False,
     keywords='django-acme',
     classifiers=[
-        'Development Status :: 3 - Alpha',
+        'Development Status :: 7 - Inactive',
         'Framework :: Django',
         'Framework :: Django :: 1.8',
         'Framework :: Django :: 1.9',
