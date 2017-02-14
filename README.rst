@@ -2,6 +2,12 @@
 Django ACME
 ===========
 
+NOT MAINTAINED ANYMORE
+======================
+
+This project isn't maintained anymore, `django-letsencrypt <https://github.com/urda/django-letsencrypt>`_
+serves the same purpose but with a more features. Please use that instead.
+
 .. image:: https://badge.fury.io/py/django-acme.svg
     :target: https://badge.fury.io/py/django-acme
 
